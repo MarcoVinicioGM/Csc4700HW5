@@ -732,12 +732,11 @@ def run_agent(goal: str) -> str:
 #
 
 if __name__ == "__main__":
-    # Argparse
-    parser = argparse.ArgumentParser(description="Agentic Controller ...")
-    parser.add_argument("query", type=str, help="User Query/Prompt/Question ...")
+    parser = argparse.ArgumentParser(description="Agent")
+    parser.add_argument("query", type=str)
     args = parser.parse_args()
 
-    # The 'goal' is the query from the command line
+    # goal is the query from the command line
     goal = args.query
 
     if not goal:
@@ -748,6 +747,3 @@ if __name__ == "__main__":
     answer = run_agent(goal)
     print("\n--- Final Answer ---\n")
     print(answer)
-
-    # You could also print telemetry for inspection:
-    # - steps taken, tokens used, cost, brief trace, etc.
